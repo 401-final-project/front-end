@@ -4,8 +4,7 @@ import t from 'tcomb-form-native';
 
 const Form = t.form.Form;
 
-const User = t.struct({
-  Name: t.String,
+const User = t.struct({  Name: t.String,
   email: t.String,
   LinkedIn: t.String,
   Twitter: t.String,
@@ -22,6 +21,7 @@ export default class Setup extends React.Component {
 
   handleSubmit = () => {
     const value = this._form.getValue(); 
+    console.log(value);
     this.setState({value: value});
   }
 

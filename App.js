@@ -11,7 +11,7 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <Text>This is going to be our app!</Text>
         <Setup />
-        <HelloWorld formState={stateName}/>
+        <HelloWorld />
       </View>
     );
   }
