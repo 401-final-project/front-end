@@ -1,15 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+
 import Setup from './form';
-import HelloWorld from './components/qr';
+import HelloWorld from './qr';
 
-export default class App extends React.Component {
+class App extends React.Component {
   render() {
-    console.log('I have been called');
-
     return (
       <View style={styles.container}>
-        <Text>This is going to be our app!</Text>
         <Setup />
         <HelloWorld />
       </View>
@@ -25,3 +23,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default App; 
