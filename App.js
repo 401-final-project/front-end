@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Contacts from './contacts.js';
+import Setup from './form';
 import HelloWorld from './components/qr';
 
 export default class App extends React.Component {
@@ -10,8 +10,8 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <Text>This is going to be our app!</Text>
+        <Setup />
         <HelloWorld />
-        <Contacts />
       </View>
     );
   }
