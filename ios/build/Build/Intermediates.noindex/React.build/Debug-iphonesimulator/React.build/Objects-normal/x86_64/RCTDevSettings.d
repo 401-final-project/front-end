@@ -1,0 +1,23 @@
+dependencies: \
+  /Users/fletcher/programming/codefellows/401/projects/401-final/front-end/node_modules/react-native/React/Modules/RCTDevSettings.mm \
+  /Users/fletcher/programming/codefellows/401/projects/401-final/front-end/node_modules/react-native/React/Modules/RCTDevSettings.h \
+  /Users/fletcher/programming/codefellows/401/projects/401-final/front-end/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/fletcher/programming/codefellows/401/projects/401-final/front-end/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/fletcher/programming/codefellows/401/projects/401-final/front-end/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/fletcher/programming/codefellows/401/projects/401-final/front-end/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/fletcher/programming/codefellows/401/projects/401-final/front-end/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/fletcher/programming/codefellows/401/projects/401-final/front-end/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/fletcher/programming/codefellows/401/projects/401-final/front-end/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/fletcher/programming/codefellows/401/projects/401-final/front-end/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
+  /Users/fletcher/programming/codefellows/401/projects/401-final/front-end/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h \
+  /Users/fletcher/programming/codefellows/401/projects/401-final/front-end/node_modules/react-native/React/Base/RCTBridge+Private.h \
+  /Users/fletcher/programming/codefellows/401/projects/401-final/front-end/node_modules/react-native/React/Base/RCTEventDispatcher.h \
+  /Users/fletcher/programming/codefellows/401/projects/401-final/front-end/node_modules/react-native/React/Modules/RCTJSCSamplingProfiler.h \
+  /Users/fletcher/programming/codefellows/401/projects/401-final/front-end/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/fletcher/programming/codefellows/401/projects/401-final/front-end/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/fletcher/programming/codefellows/401/projects/401-final/front-end/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/fletcher/programming/codefellows/401/projects/401-final/front-end/node_modules/react-native/React/Profiler/RCTProfile.h \
+  /Users/fletcher/programming/codefellows/401/projects/401-final/front-end/node_modules/react-native/React/DevSupport/RCTPackagerClient.h \
+  /Users/fletcher/programming/codefellows/401/projects/401-final/front-end/node_modules/react-native/React/DevSupport/RCTPackagerConnection.h \
+  /Users/fletcher/programming/codefellows/401/projects/401-final/front-end/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.h \
+  /Users/fletcher/programming/codefellows/401/projects/401-final/front-end/node_modules/react-native/React/Inspector/RCTInspectorPackagerConnection.h
