@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { View, Button } from 'react-native';
 import QRCode from "react-qr-code";
 
 class HelloWorld extends React.Component {

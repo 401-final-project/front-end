@@ -4,10 +4,8 @@ import Setup from './form';
 import HelloWorld from './components/qr';
 import ShareSelector from './components/share-selector.js';
 
-export default class App extends React.Component {
+class App extends React.Component {
   render() {
-    console.log('I have been called');
-
     return (
       <ScrollView>
         <Text>This is going to be our app!</Text>
@@ -27,3 +25,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default App; 
