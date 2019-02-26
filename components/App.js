@@ -1,16 +1,18 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import Setup from './form';
-import HelloWorld from './qr';
+import HelloWorld from './components/qr';
+import ShareSelector from './components/share-selector.js';
 
 class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView>
+        <Text>This is going to be our app!</Text>
         <Setup />
         <HelloWorld />
-      </View>
+        <ShareSelector />
+      </ScrollView>
     );
   }
 }
