@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import ProfileForm from './components/profileForm';
 import HelloWorld from './components/qr';
+import Scanner from './components/scanner'
 import ShareSelector from './components/share-selector.js';
 import store from './store';
 import {Provider} from 'react-redux';
@@ -18,6 +19,7 @@ class App extends React.Component {
           <Text>-----</Text>
           <ProfileForm />
           <HelloWorld />
+          <Scanner />
           <ShareSelector />
          </ScrollView>
       </Provider>
