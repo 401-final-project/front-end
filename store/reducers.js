@@ -1,19 +1,58 @@
 let defaultUser = {  
-  "name":"Fletcher",
-  "phone":"3334446666",
-  "email":"email@gmail.com",
-  "linkedIn":"asdFletcher",
-  "twitter":"asdFletch",
-  "tiktok":"exampletiktoker",
-  "snapchat":"snapper",
-  "instagram":"inster",
-  "facebook":"facebooker",
-  "pinterest":"interesting"
+  name: "Fletcher",
+  phone: "3334446666",
+  email: "email@gmail.com",
+  linkedin: "asdFletcher",
+  twitter: "asdFletch",
+  tiktok: "exampletiktoker",
+  snapchat: "snapper",
+  instagram: "inster",
+  facebook: "facebooker",
+  pinterest: "interesting"
 };
 
 let initialState = {
   userInfo: defaultUser,
-  socialSelect: {}, 
+  socialSelect: {},
+  contacts: [
+    {  
+      "name":"Fletcher1",
+      "phone":"3334446666",
+      "email":"email@gmail.com",
+      "linkedIn":"asdFletcher",
+      "twitter":"asdFletch",
+      "tiktok":"exampletiktoker",
+      "snapchat":"snapper",
+      "instagram":"inster",
+      "facebook":"facebooker",
+      "pinterest":"interesting"
+    },
+    {  
+      "name":"Fletcher2",
+      "phone":"3334446666",
+      "email":"email@gmail.com",
+      "linkedIn":"asdFletcher",
+      "twitter":"asdFletch",
+      "tiktok":"exampletiktoker",
+      "snapchat":"snapper",
+      "instagram":"inster",
+      "facebook":"facebooker",
+      "pinterest":"interesting"
+    },
+    {  
+      "name":"Fletcher3",
+      "phone":"3334446666",
+      "email":"email@gmail.com",
+      "linkedIn":"asdFletcher",
+      "twitter":"asdFletch",
+      "tiktok":"exampletiktoker",
+      "snapchat":"snapper",
+      "instagram":"inster",
+      "facebook":"facebooker",
+      "pinterest":"interesting"
+    }
+  ],
+  recentScan: {},
 };
 
 export default (state = initialState, action) => {
@@ -30,6 +69,13 @@ export default (state = initialState, action) => {
       let newState = {
         ...state,
         socialSelect: payload,
+      };
+      return newState;
+    }
+    case 'NEW_CONTACT_SCAN':{
+      let newState = {
+        ...state,
+        recentScan: payload,
       };
       return newState;
     }
