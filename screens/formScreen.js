@@ -82,10 +82,6 @@ class ProfileForm extends React.Component {
   onChange = (formData) => {
     this.setState({formData});
   }
-  log = () => {
-    // console.log('🍆', );
-    console.log(this.props.userInfo);
-  }
   
   render() {
     return (
@@ -106,10 +102,6 @@ class ProfileForm extends React.Component {
         <Button 
           title="Cancel"
           onPress={this.handleCancel}
-        />
-        <Button 
-          title="Log"
-          onPress={this.log}
         />
       </View>
     );

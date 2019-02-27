@@ -2,7 +2,7 @@ let defaultUser = {
   name: "Fletcher",
   phone: "3334446666",
   email: "email@gmail.com",
-  linkedIn: "asdFletcher",
+  linkedin: "asdFletcher",
   twitter: "asdFletch",
   tiktok: "exampletiktoker",
   snapchat: "snapper",

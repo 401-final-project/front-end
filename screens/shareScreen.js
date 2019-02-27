@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, ScrollView, Button , Switch , TouchableOpacity}
 import { CheckBox } from 'react-native-elements'
 import { connect } from 'react-redux';
 
-import ShareButton from '../components/share-button';
+import ShareButton from '../components/share-button.js';
 import * as actions from '../store/actions.js';
 import * as icons from '../assets/util.js';
 
@@ -26,7 +26,7 @@ class ShareSelector extends React.Component {
     pinterestCheckbox: false,
     twitterCheckbox: false,
     facebookCheckbox: false,
-    tiktokCheckbox: false,
+    githubCheckbox: false,
     instagramCheckbox: false,
     snapchatCheckbox: false,
   }
@@ -63,36 +63,44 @@ class ShareSelector extends React.Component {
     )
   }
 }
-
 const BUTTONS = [
   { uri: icons.PHONE_ICON,
+    dataName: 'phone',
     name: 'phoneCheckbox',
     text: "Phone",},
   { uri: icons.EMAIL_ICON,
+    dataName: 'email',
     name: 'emailCheckbox',
     text: "email",},
   { uri: icons.LINKEDIN_ICON,
+    dataName: 'linkedin',
     name: 'linkedinCheckbox',
     text: "Linkedin",},
   { uri: icons.PINTEREST_ICON,
+    dataName: 'pinterest',
     name: 'pinterestCheckbox',
     text: "Pinterest",},
   { uri: icons.TWITTER_ICON,
+    dataName: 'twitter',
     name: 'twitterCheckbox',
     text: "Twitter",},
   { uri: icons.FACEBOOK_ICON,
+    dataName: 'facebook',
     name: 'facebookCheckbox',
     text: "Facebook",},
-  { uri: icons.TIKTOK_ICON,
-    name: 'tiktokCheckbox',
-    text: "TikTok",},
+  { uri: icons.GITHUB_ICON,
+    dataName: 'github',
+    name: 'githubCheckbox',
+    text: "github",},
   { uri: icons.INSTAGRAM_ICON,
+    dataName: 'instagram',
     name: 'instagramCheckbox',
     text: "Instagram",},
   { uri: icons.SNAPCHAT_ICON,
+    dataName: 'snapchat',
     name: 'snapchatCheckbox',
     text: "Snapchat",},
-];
+ ];
 
 export default connect( undefined, mapDispatchToProps)(ShareSelector);
 
