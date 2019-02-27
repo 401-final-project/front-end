@@ -10,7 +10,7 @@ const Form = t.form.Form;
 
 const User = t.struct({
   name: t.String,
-  phone: t.String,
+  phone: t.Number,
   email: t.String,
   linkedIn: t.String, 
   pinterest: t.String,
