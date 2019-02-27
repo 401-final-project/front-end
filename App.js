@@ -20,10 +20,12 @@ class App extends React.Component {
 
           <ProfileForm />
           <Text>ProfileForm:</Text>
+          <ProfileForm />
           <Storage />
           <QR />
           <ShareSelector />
           <Scanner />
+
          </ScrollView>
       </Provider>
     );

@@ -10,16 +10,49 @@ const Form = t.form.Form;
 
 const User = t.struct({
   name: t.String,
-  phone: t.String,
+  phone: t.Number,
   email: t.String,
-  linkedIn: t.String,
+  linkedIn: t.String, 
   pinterest: t.String,
   twitter: t.String,
   facebook: t.String,
-  tiktok: t.String,
+  github: t.String,
   instagram: t.String,
   snapchat: t.String,
 });
+
+const Placeholders = {
+  fields: {
+    linkedIn: {
+      placeholder: 'username',
+      help: 'linkedin/in/username'
+    },
+    pinterest: {
+      placeholder: 'username',
+      help: 'pinterest.com/username'
+    },
+    twitter: {
+      placeholder: 'username',
+      help: 'twitter.com/username'
+    },
+    facebook: {
+      placeholder: 'username',
+      help: 'facebook.com/username'
+    },
+    github: {
+      placeholder: 'username',
+      help: 'github.com/username'
+    },
+    instagram: {
+      placeholder: 'username',
+      help: 'instagram.com/username'
+    },
+    snapchat: {
+      placeholder: 'username',
+      help: 'snapchat.com/add/username' 
+    }
+  }
+};
 
 const mapStateToProps = state => {
   return ({
@@ -63,6 +96,7 @@ class ProfileForm extends React.Component {
           ref="form"
           type={User}
           value={this.state.formData}
+          options={Placeholders}
           onChange={this.onChange}
         />
         <Button 
