@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, Text, TouchableOpacity, Image } from 'react-native';
+import { CheckBox } from 'react-native-elements'
 
 const styles = StyleSheet.create({
   buttonText: {
@@ -23,12 +24,16 @@ const styles = StyleSheet.create({
   },
 });
 
-const ShareButton = ({ buttonStyle, onPress, iconSrc, textStyle, children }) => (
-  <TouchableOpacity activeOpacity={0.5} style={[styles.button, buttonStyle]} onPress={onPress}>
-    <Image style={styles.icon} source={iconSrc} />
-    <Text style={[styles.buttonText, textStyle]}>{children}</Text>
-  </TouchableOpacity>
-);
+// const ShareButton = ({ buttonStyle, onPress, iconSrc, textStyle, children  }) => (
+const ShareButton = (props) => {
+  return (
+    <TouchableOpacity activeOpacity={0.5} style={[styles.button, props.buttonStyle]} onPress={props.onPress}>
+      <CheckBox checked={props.checked} onPress={props.onPress}/>
+      <Image style={styles.icon} source={props.iconSrc} />
+      <Text style={[styles.buttonText, props.textStyle]}>{props.children}</Text>
+    </TouchableOpacity>
+  );
+};
 
 export default ShareButton;
 

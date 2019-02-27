@@ -1,18 +1,26 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
-import Setup from './form';
+import ProfileForm from './components/profileForm';
 import HelloWorld from './components/qr';
 import ShareSelector from './components/share-selector.js';
+import store from './store';
+import {Provider} from 'react-redux';
+
 
 class App extends React.Component {
   render() {
     return (
-      <ScrollView>
-        <Text>This is going to be our app!</Text>
-        <Setup />
-        <HelloWorld />
-        <ShareSelector />
-      </ScrollView>
+      <Provider store={store}>
+        <ScrollView>
+          <Text>This is going to be our app!</Text>
+          <Text>-----</Text>
+          <Text>-----</Text>
+          <Text>-----</Text>
+          <ProfileForm />
+          <HelloWorld />
+          <ShareSelector />
+         </ScrollView>
+      </Provider>
     );
   }
 }
