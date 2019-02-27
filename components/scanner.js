@@ -19,10 +19,10 @@ export default class Scanner extends Component {
   };
 
   _handleBarCodeRead = data => {
-    Alert.alert(
-      'Scan successful!',
-      JSON.stringify(data)
-    );
+    console.log(`pasdfasdf`);
+    // console.log(data);
+    console.log(JSON.stringify(data));
+
   };
 
   render() {
