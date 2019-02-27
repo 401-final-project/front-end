@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import ProfileForm from './components/profileForm';
-import HelloWorld from './components/qr';
+import QR from './components/qr';
+import Storage from './components/storage.js';
 import ShareSelector from './components/share-selector.js';
 import store from './store';
 import {Provider} from 'react-redux';
@@ -15,10 +16,10 @@ class App extends React.Component {
           <Text>This is going to be our app!</Text>
           <Text>-----</Text>
           <Text>-----</Text>
-          <Text>-----</Text>
-          <ProfileForm />
-          <HelloWorld />
-          <ShareSelector />
+          <Text>ProfileForm:</Text>
+          <Storage />
+          {/* <QR /> */}
+          {/* <ShareSelector /> */}
          </ScrollView>
       </Provider>
     );
