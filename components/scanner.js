@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, Alert } from 'react-native';
 import { Constants, BarCodeScanner, Permissions } from 'expo';
+import { connect } from 'react-redux';
+import * as actions from '../store/actions.js';
 
-export default class Scanner extends Component {
+const mapDispatchToProps = (dispatch) => {
+  return ({
+    newContactScan: (payload) => {
+      return dispatch(actions.newContactScan(payload));
+    },
+  });
+};
+
+class Scanner extends Component {
   state = {
     hasCameraPermission: null
   };
@@ -19,10 +29,10 @@ export default class Scanner extends Component {
   };
 
   _handleBarCodeRead = data => {
-    console.log(`pasdfasdf`);
-    // console.log(data);
-    console.log(JSON.stringify(data));
-
+    let userData = data.data;
+    let userDataString = userData.toString();
+    let userDataParsed = JSON.parse(userDataString);
+    this.props.newContactScan(userDataParsed);
   };
 
   render() {
@@ -52,3 +62,4 @@ const styles = StyleSheet.create({
   }
 });
 
+export default connect(undefined, mapDispatchToProps)(Scanner)

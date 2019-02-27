@@ -23,8 +23,8 @@ class QR extends React.Component {
   // };
 
   render() {
-    console.log(`🍕`, this.props.userInfo);
-    console.log(`🍕`, JSON.stringify(this.props.userInfo));
+    // console.log(`🍕`, this.props.userInfo);
+    // console.log(`🍕`, JSON.stringify(this.props.userInfo));
     return (
       <View>
         <QRCode value={JSON.stringify(this.props.userInfo)} />
