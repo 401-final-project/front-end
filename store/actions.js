@@ -13,3 +13,12 @@ export const updateShareSelector = (payload) => {
     payload,
   };
 };
+export const newContactScan = (payload) => {
+  return {
+    type: 'NEW_CONTACT_SCAN',
+    payload,
+  };
+};
+
+
+
