@@ -54,19 +54,19 @@ FormStack.navigationOptions = {
   ),
 };
 
-const ContactsStack = createStackNavigator({
-  Forms: ContactsScreen, 
-});
+// const ContactsStack = createStackNavigator({
+//   Forms: ContactsScreen, 
+// });
 
-FormStack.navigationOptions = {
-  tabBarLabel: 'Profile',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
-    />
-  ),
-};
+// FormStack.navigationOptions = {
+//   tabBarLabel: 'Profile',
+//   tabBarIcon: ({ focused }) => (
+//     <TabBarIcon
+//       focused={focused}
+//       name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+//     />
+//   ),
+// };
 
 // SettingsStack.navigationOptions = {
 //   tabBarLabel: 'Jared Settings',
