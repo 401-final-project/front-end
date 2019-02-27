@@ -18,12 +18,13 @@ class App extends React.Component {
           <Text>-----</Text>
           <Text>-----</Text>
 
+          <ProfileForm />
           <Text>ProfileForm:</Text>
           <ProfileForm />
-          {/* <Scanner /> */}
           <Storage />
-          <QR /> 
+          <QR />
           <ShareSelector />
+          <Scanner />
 
          </ScrollView>
       </Provider>

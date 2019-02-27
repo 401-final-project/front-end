@@ -61,28 +61,30 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  // console.log(`in MDTP`);
   return ({
-    updateUserInfo: () => dispatch(actions.updateUserInfo()),
-  })
+    updateUserInfo: (payload) => {
+      return dispatch(actions.updateUserInfo(payload))
+    },
+  });
 };
 
 class ProfileForm extends React.Component {
-  state = {
-
-  }
-      //   <Text>hello</Text>
+  state = {}
 
   handleInfoSubmit = () => {
-    console.log('test');
-    this.setState({formData});
+    this.props.updateUserInfo(this.state.formData);
+  }
+
+  handleCancel = () => {
+    this.setState({formData: this.props.userInfo});
   }
   
   onChange = (formData) => {
-    console.log(`change detected 🐤`, formData);
-    // this.setState({formData});
-    // TODO: emit a redux action
-    // something like this ? updateUserInfo(formData) ???
+    this.setState({formData});
+  }
+  log = () => {
+    // console.log('🍆', );
+    console.log(this.props.userInfo);
   }
   
   render() {
@@ -93,6 +95,7 @@ class ProfileForm extends React.Component {
           // ref={c => this._form = c} 
           ref="form"
           type={User}
+          value={this.state.formData}
           options={Placeholders}
           onChange={this.onChange}
         />
@@ -100,16 +103,24 @@ class ProfileForm extends React.Component {
           title="Save My Info"
           onPress={this.handleInfoSubmit}
         />
+        <Button 
+          title="Cancel"
+          onPress={this.handleCancel}
+        />
+        <Button 
+          title="Log"
+          onPress={this.log}
+        />
       </View>
     );
   }
 }
 
-const styles = {
+var styles = StyleSheet.create({
   form: {
     margin: 20,
-  }
-}
+  },
+});
 
 export default connect(
   mapStateToProps,
