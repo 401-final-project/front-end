@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import ProfileForm from './components/profileForm';
-import HelloWorld from './components/qr';
+import QR from './components/qr';
+import Storage from './components/storage.js';
 import Scanner from './components/scanner'
 import ShareSelector from './components/share-selector.js';
 import store from './store';
@@ -16,11 +17,12 @@ class App extends React.Component {
           <Text>This is going to be our app!</Text>
           <Text>-----</Text>
           <Text>-----</Text>
-          <Text>-----</Text>
-          <ProfileForm />
-          <HelloWorld />
-          <Scanner />
-          <ShareSelector />
+
+          <Text>ProfileForm:</Text>
+          <Storage />
+          {/* <QR /> */}
+          {/* <ShareSelector /> */}
+
          </ScrollView>
       </Provider>
     );

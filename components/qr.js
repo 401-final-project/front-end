@@ -2,7 +2,7 @@ import React from "react";
 import { View, Button } from 'react-native';
 import QRCode from "react-qr-code";
 
-class HelloWorld extends React.Component {
+class QR extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,4 +28,4 @@ class HelloWorld extends React.Component {
   }
 }
 
-export default HelloWorld;
+export default QR;
