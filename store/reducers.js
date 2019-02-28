@@ -1,62 +1,81 @@
 import { AsyncStorage } from 'react-native';
 
-// let defaultUser = {
-//   name: "Fletcher",
-//   phone: "3334446666",
-//   email: "email@gmail.com",
-//   linkedin: "asdFletcher",
-//   twitter: "asdFletch",
-//   tiktok: "exampletiktoker",
-//   snapchat: "snapper",
-//   instagram: "inster",
-//   facebook: "facebooker",
-//   pinterest: "interesting"
-// };
+{      // {
+  // let defaultUser = {
+  //   name: "Fletcher",
+  //   phone: "3334446666",
+  //   email: "email@gmail.com",
+  //   linkedin: "asdFletcher",
+  //   twitter: "asdFletch",
+  //   tiktok: "exampletiktoker",
+  //   snapchat: "snapper",
+  //   instagram: "inster",
+  //   facebook: "facebooker",
+  //   pinterest: "interesting"
+  // };
+  //   "name":"Fletcher1",
+  //   "phone":"3334446666",
+  //   "email":"email@gmail.com",
+  //   "linkedIn":"asdFletcher",
+  //   "twitter":"asdFletch",
+  //   "tiktok":"exampletiktoker",
+  //   "snapchat":"snapper",
+  //   "instagram":"inster",
+  //   "facebook":"facebooker",
+  //   "pinterest":"interesting"
+  // },
+  // {
+  //   "name":"Fletcher2",
+  //   "phone":"3334446666",
+  //   "email":"email@gmail.com",
+  //   "linkedIn":"asdFletcher",
+  //   "twitter":"asdFletch",
+  //   "tiktok":"exampletiktoker",
+  //   "snapchat":"snapper",
+  //   "instagram":"inster",
+  //   "facebook":"facebooker",
+  //   "pinterest":"interesting"
+  // },
+  // {
+  //   "name":"Fletcher3",
+  //   "phone":"3334446666",
+  //   "email":"email@gmail.com",
+  //   "linkedIn":"asdFletcher",
+  //   "twitter":"asdFletch",
+  //   "tiktok":"exampletiktoker",
+  //   "snapchat":"snapper",
+  //   "instagram":"inster",
+  //   "facebook":"facebooker",
+  //   "pinterest":"interesting"
+  // }
+}
+
+let defaultUser = {
+  name: "Fletcher",
+  phone: "3334446666",
+  linkedin: "asdFletcher",
+  facebook: "facebooker",
+  pinterest: "interesting"
+};
 
 let initialState = {
-  user_object: {
     userInfo: {},
-    socialSelect: {},
+    socialSelect: {
+      name: true,
+      phone: false,
+      email: false,
+      linkedin: false,
+      pinterest: false,
+      twitter: false,
+      facebook: false,
+      github: false,
+      instagram: false,
+      snapchat: false,
+    },
     contacts: [
-      // {
-      //   "name":"Fletcher1",
-      //   "phone":"3334446666",
-      //   "email":"email@gmail.com",
-      //   "linkedIn":"asdFletcher",
-      //   "twitter":"asdFletch",
-      //   "tiktok":"exampletiktoker",
-      //   "snapchat":"snapper",
-      //   "instagram":"inster",
-      //   "facebook":"facebooker",
-      //   "pinterest":"interesting"
-      // },
-      // {
-      //   "name":"Fletcher2",
-      //   "phone":"3334446666",
-      //   "email":"email@gmail.com",
-      //   "linkedIn":"asdFletcher",
-      //   "twitter":"asdFletch",
-      //   "tiktok":"exampletiktoker",
-      //   "snapchat":"snapper",
-      //   "instagram":"inster",
-      //   "facebook":"facebooker",
-      //   "pinterest":"interesting"
-      // },
-      // {
-      //   "name":"Fletcher3",
-      //   "phone":"3334446666",
-      //   "email":"email@gmail.com",
-      //   "linkedIn":"asdFletcher",
-      //   "twitter":"asdFletch",
-      //   "tiktok":"exampletiktoker",
-      //   "snapchat":"snapper",
-      //   "instagram":"inster",
-      //   "facebook":"facebooker",
-      //   "pinterest":"interesting"
-      // }
+
     ],
     recentScan: {},
-  },
 };
 export default (state = initialState, action) => {
   let { type, payload } = action;
@@ -69,13 +88,23 @@ export default (state = initialState, action) => {
     _storeData(newState);
     _retrieveData();
     return newState;
-
   }
   case 'UPDATE_SHARE_SELCTOR': {
+
+    let category = payload.checkboxName;
+    let status = payload.status;
+
+    let newSocialSelect = {
+      ...state.socialSelect,
+    }
+    newSocialSelect[category] = status;
+
     let newState = {
       ...state,
-      socialSelect: payload,
+      socialSelect: newSocialSelect
     };
+
+    _storeData(newState);
     return newState;
   }
   case 'NEW_CONTACT_SCAN': {
@@ -83,6 +112,7 @@ export default (state = initialState, action) => {
         ...state,
         contacts: [...state.contacts, payload],
       };
+    _storeData(newState);
     return newState;
   }
   default:
