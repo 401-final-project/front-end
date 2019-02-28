@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, Button , Switch , TouchableOpacity} from 'react-native';
-import { CheckBox } from 'react-native-elements'
+import { StyleSheet, Text, View, ScrollView, Button , TouchableOpacity} from 'react-native';
+// import { Switch } from 'react-native-switch'
 import { connect } from 'react-redux';
 
 import ShareButton from '../components/share-button.js';
@@ -25,7 +25,7 @@ const mapDispatchToProps = (dispatch) => {
 
 class ShareSelector extends React.Component {
 
-  handleCheckBox = (checkboxName) => {
+  handleSwitch = (checkboxName) => {
     if(this.props.socialSelect[checkboxName]){
       this.props.update({checkboxName: checkboxName, status: false});
     } else {
@@ -44,7 +44,7 @@ class ShareSelector extends React.Component {
                   <ShareButton
                     key={index}
                     iconSrc={{ uri: category.uri }}
-                    onPress={() => {this.handleCheckBox(category.name)}}
+                    onPress={() => {this.handleSwitch(category.name)}}
                     checked={this.props.socialSelect[category.name]}
                   >{category.text}</ShareButton>
               );
