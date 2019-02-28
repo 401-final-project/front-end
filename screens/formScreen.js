@@ -13,7 +13,7 @@ const User = t.struct({
   name: t.String,
   phone: t.Number,
   email: t.String,
-  linkedIn: t.String, 
+  linkedin: t.String, 
   pinterest: t.String,
   twitter: t.String,
   facebook: t.String,
@@ -24,7 +24,7 @@ const User = t.struct({
 
 const Placeholders = {
   fields: {
-    linkedIn: {
+    linkedin: {
       placeholder: 'username',
       help: 'linkedin/in/username'
     },
@@ -104,33 +104,43 @@ class ProfileForm extends React.Component {
 
   render() {
     return (
-      <ScrollView style={styles.form}>
-        <Text>Enter your info below:</Text>
-        <Form 
-          // ref={c => this._form = c} 
-          ref="form"
-          type={User}
-          value={this.state.formData}
-          options={Placeholders}
-          onChange={this.onChange}
-        />
-        <Button 
-          title="Save My Info"
-          onPress={this.handleInfoSubmit}
-        />
-        <Button 
-          title="Cancel"
-          onPress={this.handleCancel}
-        />
-      </ScrollView>
+      <View style={styles.container}>
+        <ScrollView style={styles.form} showsVerticalScrollIndicator={false}>
+          <Text>Enter your info below:</Text>
+          <Form 
+            // ref={c => this._form = c} 
+            ref="form"
+            type={User}
+            value={this.state.formData}
+            options={Placeholders}
+            onChange={this.onChange}
+          />
+          <Button 
+            title="Save My Info"
+            onPress={this.handleInfoSubmit}
+          />
+          <Button 
+            title="Cancel"
+            onPress={this.handleCancel}
+          />
+        </ScrollView>
+      </View>
     );
   }
 }
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   form: {
-    margin: 20,
+    margin: 24,
   },
+  container: {
+    justifyContent: 'center',
+    marginTop: 5,
+    marginLeft: 25,
+    marginRight: 25,
+    padding: 25,
+    backgroundColor: '#ffffff'
+  }
 });
 
 export default connect(
