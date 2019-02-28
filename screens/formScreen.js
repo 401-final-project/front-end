@@ -67,9 +67,9 @@ const mapDispatchToProps = (dispatch) => {
     updateUserInfo: (payload) => {
       return dispatch(actions.updateUserInfo(payload))
     },
-    retrievedLocalStorage: (payload) => {
-      return dispatch(actions.retrievedLocalStorage(payload))
-    },
+    // retrievedLocalStorage: (payload) => {
+    //   return dispatch(actions.retrievedLocalStorage(payload))
+    // },
   });
 };
 
@@ -82,25 +82,25 @@ class ProfileForm extends React.Component {
   }
 
   handleCancel = () => {
-    // this.setState({formData: this.props.userInfo});
-    console.log(this.props.state);
+    this.setState({formData: this.props.userInfo});
+    // console.log(this.props.state);
   }
 
   onChange = (formData) => {
     this.setState({formData});
   }
   
-  async componentDidMount() {
+  // async componentDidMount() {
 
-    const retrievedData = await AsyncStorage.getItem('user');
-    console.log("fetched data:", retrievedData);
-    if(retrievedData !== null) {
-      this.props.retrievedLocalStorage(retrievedData);
-    } 
-    // else {
-    //   console.log("no data found");
-    // }
-  }
+  //   const retrievedData = await AsyncStorage.getItem('user');
+  //   console.log("fetched data:", retrievedData);
+  //   if(retrievedData !== null) {
+  //     this.props.retrievedLocalStorage(retrievedData);
+  //   } 
+  //   else {
+  //     console.log("no data found");
+  //   }
+  // }
 
   render() {
     return (
