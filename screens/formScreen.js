@@ -62,7 +62,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  console.log(actions);
+  // console.log(actions);
   return ({
     updateUserInfo: (payload) => {
       return dispatch(actions.updateUserInfo(payload))

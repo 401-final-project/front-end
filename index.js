@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './components/App.js';
 
 function Main() {
-  return( 
+  return(   
     <App />
   );
 }
