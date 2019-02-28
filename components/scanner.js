@@ -41,6 +41,7 @@ class Scanner extends Component {
 
     if( !userAlreadyExists(userDataParsed, this.props.contacts) ){
       this.props.newContactScan(userDataParsed);
+      alert(`${userDataParsed.name} added to contacts`)
     }
   };
 
