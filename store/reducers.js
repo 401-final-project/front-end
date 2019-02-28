@@ -51,31 +51,66 @@ import { AsyncStorage } from 'react-native';
 }
 
 let defaultUser = {
-  name: "Fletcher",
-  phone: "3334446666",
-  linkedin: "asdFletcher",
-  facebook: "facebooker",
-  pinterest: "interesting"
+  name: 'Fletcher',
+  phone: '3334446666',
+  linkedin: 'asdFletcher',
+  facebook: 'facebooker',
+  pinterest: 'interesting',
 };
 
 let initialState = {
-    userInfo: {},
-    socialSelect: {
-      name: true,
-      phone: false,
-      email: false,
-      linkedin: false,
-      pinterest: false,
-      twitter: false,
-      facebook: false,
-      github: false,
-      instagram: false,
-      snapchat: false,
+  userInfo: {},
+  socialSelect: {
+    name: true,
+    phone: false,
+    email: false,
+    linkedin: false,
+    pinterest: false,
+    twitter: false,
+    facebook: false,
+    github: false,
+    instagram: false,
+    snapchat: false,
+  },
+  contacts: [
+    {
+      'name':'Fletcher1',
+      'phone':'3334446666',
+      'email':'email@gmail.com',
+      'linkedIn':'asdFletcher',
+      'twitter':'asdFletch',
+      'tiktok':'exampletiktoker',
+      'snapchat':'snapper',
+      'instagram':'inster',
+      'facebook':'facebooker',
+      'pinterest':'interesting',
     },
-    contacts: [
-
-    ],
-    recentScan: {},
+    {
+      'name':'Fletcher2',
+      'phone':'3334446666',
+      'email':'email@gmail.com',
+      'linkedIn':'asdFletcher',
+      'twitter':'asdFletch',
+      'tiktok':'exampletiktoker',
+      'snapchat':'snapper',
+      'instagram':'inster',
+      'facebook':'facebooker',
+      'pinterest':'interesting',
+    },
+    {
+      'name':'Fletcher3',
+      'phone':'3334446666',
+      'email':'email@gmail.com',
+      'linkedIn':'asdFletcher',
+      'twitter':'asdFletch',
+      'tiktok':'exampletiktoker',
+      'snapchat':'snapper',
+      'instagram':'inster',
+      'facebook':'facebooker',
+      'pinterest':'interesting',
+    },
+  ],
+  recentScan: {},
 
 };
 export default (state = initialState, action) => {
@@ -97,23 +132,25 @@ export default (state = initialState, action) => {
 
     let newSocialSelect = {
       ...state.socialSelect,
-    }
+    };
     newSocialSelect[category] = status;
 
     let newState = {
       ...state,
-      socialSelect: newSocialSelect
+      socialSelect: newSocialSelect,
     };
 
     _storeData(newState);
     return newState;
   }
   case 'NEW_CONTACT_SCAN': {
-
     let newState = {
       ...state,
       contacts: [...state.contacts, payload],
     };
+
+    _storeData(newState);
+
     return newState;
     
   }
