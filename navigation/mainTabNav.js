@@ -6,7 +6,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import ShareScreen from '../screens/shareScreen';
 import ScanScreen from '../screens/scanScreen';
 import FormScreen from '../screens/formScreen';
-// import ContactsScreen from '../screens/contactScreen';
+import ContactsScreen from '../screens/contactScreen';
 
 const HomeStack = createStackNavigator({
   Home: ShareScreen,
@@ -54,19 +54,19 @@ FormStack.navigationOptions = {
   ),
 };
 
-// const ContactsStack = createStackNavigator({
-//   Forms: ContactsScreen, 
-// });
+const ContactsStack = createStackNavigator({
+  Forms: ContactsScreen, 
+});
 
-// FormStack.navigationOptions = {
-//   tabBarLabel: 'Profile',
-//   tabBarIcon: ({ focused }) => (
-//     <TabBarIcon
-//       focused={focused}
-//       name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
-//     />
-//   ),
-// };
+ContactsStack.navigationOptions = {
+  tabBarLabel: 'Contacts',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+    />
+  ),
+};
 
 // SettingsStack.navigationOptions = {
 //   tabBarLabel: 'Jared Settings',
@@ -82,6 +82,6 @@ export default createBottomTabNavigator({
   HomeStack,
   ScanStack,
   FormStack,
-  // ContactsStack,
+  ContactsStack,
   // SettingsStack,
 });

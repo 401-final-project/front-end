@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { Text, ScrollView, StyleSheet, Button } from 'react-native';
+
 import { connect } from 'react-redux';
 
 import * as actions from '../store/actions';
