@@ -6,9 +6,6 @@ import { connect } from 'react-redux';
 import {Provider} from 'react-redux';
 import store from '../store';
 
-
-
-
 const mapStateToProps = state => {
   return ({
     contacts: state.contacts,
@@ -16,11 +13,9 @@ const mapStateToProps = state => {
   });
 };
 
-class UserContacts extends React.Component{
-  state = {};
 
+class UserContacts extends React.Component {
   render(){
-    console.log('hello', this.props.contacts);
     return (
       <Provider store={store}>
       <ScrollView>
@@ -37,7 +32,6 @@ class UserContacts extends React.Component{
       </Provider>
     )
   }
-
 }
 
 export default connect(mapStateToProps)(UserContacts); 

@@ -101,10 +101,10 @@ export default (state = initialState, action) => {
     return newState;
   }
   case 'NEW_CONTACT_SCAN': {
-    let newState = {
-      ...state,
-      recentScan: payload,
-    };
+      let newState = {
+        ...state,
+        contacts: [...state.contacts, payload],
+      };
     return newState;
   }
   default:
