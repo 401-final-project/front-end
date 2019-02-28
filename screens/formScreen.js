@@ -50,7 +50,6 @@ class ProfileForm extends React.Component {
 
   handleInfoSubmit = () => {
     this.props.updateUserInfo(this.state.formData);
-    
   }
 
   handleCancel = () => {

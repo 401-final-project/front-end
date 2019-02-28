@@ -57,9 +57,16 @@ let initialState = {
     },
   ],
   recentScan: {},
-
+  userId: Expo.Constants.installationId,
+  location: {
+    latitude: 0,
+    longitude: 0,
+    time: Date.now(),
+  },
 };
+
 export default (state = initialState, action) => {
+  console.log(`🐤`, state);
   let { type, payload } = action;
   switch (type) {
  
@@ -93,9 +100,15 @@ export default (state = initialState, action) => {
       contacts: [...state.contacts, payload],
     };
     return newState;
-    
   }
-
+  case 'UPDATE_LOCATION': {
+    let newState = {
+      ...state,
+      location: payload,
+    };
+    return newState;
+  }
+  
   case 'RETRIEVED_DATA': {
     return payload;
   }
