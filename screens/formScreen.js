@@ -13,7 +13,7 @@ const User = t.struct({
   name: t.String,
   phone: t.Number,
   email: t.String,
-  linkedIn: t.String, 
+  linkedin: t.String, 
   pinterest: t.String,
   twitter: t.String,
   facebook: t.String,
@@ -24,7 +24,7 @@ const User = t.struct({
 
 const Placeholders = {
   fields: {
-    linkedIn: {
+    linkedin: {
       placeholder: 'username',
       help: 'linkedin/in/username'
     },
