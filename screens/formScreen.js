@@ -1,11 +1,11 @@
 import React from 'react';
-import { Text, View, StyleSheet, Button, ScrollView } from 'react-native';
-
+import { Text, View, StyleSheet, Button, ScrollView, AsyncStorage } from 'react-native';
 import { connect } from 'react-redux';
 
 import * as actions from '../store/actions';
 
 import t from 'tcomb-form-native';
+import 'console';
 
 const Form = t.form.Form;
 
@@ -62,9 +62,13 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = (dispatch) => {
+  console.log(actions);
   return ({
     updateUserInfo: (payload) => {
       return dispatch(actions.updateUserInfo(payload))
+    },
+    retrievedLocalStorage: (payload) => {
+      return dispatch(actions.retrievedLocalStorage(payload))
     },
   });
 };
@@ -78,13 +82,26 @@ class ProfileForm extends React.Component {
   }
 
   handleCancel = () => {
-    this.setState({formData: this.props.userInfo});
+    // this.setState({formData: this.props.userInfo});
+    console.log(this.props.state);
   }
-  
+
   onChange = (formData) => {
     this.setState({formData});
   }
   
+  async componentDidMount() {
+
+    const retrievedData = await AsyncStorage.getItem('user');
+    console.log("fetched data:", retrievedData);
+    if(retrievedData !== null) {
+      this.props.retrievedLocalStorage(retrievedData);
+    } 
+    // else {
+    //   console.log("no data found");
+    // }
+  }
+
   render() {
     return (
       <ScrollView style={styles.form}>

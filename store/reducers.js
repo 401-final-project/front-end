@@ -122,7 +122,7 @@ export default (state = initialState, action) => {
       userInfo: payload,
     };
     _storeData(newState);
-    _retrieveData();
+    // _retrieveData();
     return newState;
   }
   case 'UPDATE_SHARE_SELCTOR': {
@@ -148,9 +148,17 @@ export default (state = initialState, action) => {
       ...state,
       contacts: [...state.contacts, payload],
     };
+
     _storeData(newState);
+
     return newState;
+    
   }
+
+  case 'RETRIEVED_DATA': {
+    return payload;
+  }
+
   default:
     return state;
   }
@@ -164,13 +172,13 @@ async function _storeData(state) {
   }
 }
 
-async function _retrieveData()  {
-  try {
-    const value = await AsyncStorage.getItem('user');
-    if (value !== null) {
-      console.log(value);
-    }
-  } catch(error) {
-    console.error(error);
-  }
-}
+// async function _retrieveData()  {
+//   try {
+//     const value = await AsyncStorage.getItem('user');
+//     if (value !== null) {
+//       console.log(value);
+//     }
+//   } catch(error) {
+//     console.error(error);
+//   }
+// }

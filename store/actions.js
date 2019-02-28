@@ -20,5 +20,10 @@ export const newContactScan = (payload) => {
   };
 };
 
-
+export const retrievedLocalStorage = (payload) => {
+  return {
+    type: 'RETRIEVED_DATA',
+    payload,
+  };
+};
 
