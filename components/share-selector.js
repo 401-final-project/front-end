@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Button , Switch , TouchableOpacity} from 'react-native';
 import { CheckBox } from 'react-native-elements'
@@ -6,6 +7,13 @@ import { connect } from 'react-redux';
 import ShareButton from '../components/share-button.js';
 import * as actions from '../store/actions.js';
 import * as icons from '../assets/util.js';
+
+const mapStateToProps = (state) => {
+  return({
+    userInfo: state.userInfo,
+    socialSelect: state.socialSelect,
+  });
+};
 
 const mapDispatchToProps = (dispatch) => {
   return ({
@@ -16,29 +24,13 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 class ShareSelector extends React.Component {
-  state = {
-    phoneCheckbox: false,
-    emailCheckbox: false,
-    linkedinCheckbox: false,
-    pinterestCheckbox: false,
-    twitterCheckbox: false,
-    facebookCheckbox: false,
-    githubCheckbox: false,
-    instagramCheckbox: false,
-    snapchatCheckbox: false,
-  }
 
   handleCheckBox = (checkboxName) => {
-    let newState = {...this.state};
-    
-    if(this.state[checkboxName]){
-      newState[checkboxName] = false;
+    if(this.props.socialSelect[checkboxName]){
+      this.props.update({checkboxName: checkboxName, status: false});
     } else {
-      newState[checkboxName] = true;
+      this.props.update({checkboxName: checkboxName, status: true});
     }
-    this.setState(newState);
-
-    this.props.update(this.state);
   }
 
   render() {
@@ -46,14 +38,17 @@ class ShareSelector extends React.Component {
       <ScrollView>
         {
           BUTTONS.map( (category, index) => {
-            return (
-                <ShareButton
-                  key={index}
-                  iconSrc={{ uri: category.uri }}
-                  onPress={() => {this.handleCheckBox(category.name)}}
-                  checked={this.state[category.name]}
-                >{category.text}</ShareButton>
-            );
+            let userHas = this.props.userInfo[category.name];
+            if(userHas){
+              return (
+                  <ShareButton
+                    key={index}
+                    iconSrc={{ uri: category.uri }}
+                    onPress={() => {this.handleCheckBox(category.name)}}
+                    checked={this.props.socialSelect[category.name]}
+                  >{category.text}</ShareButton>
+              );
+            }
           })
         }
       </ScrollView>
@@ -63,41 +58,32 @@ class ShareSelector extends React.Component {
 
 const BUTTONS = [
   { uri: icons.PHONE_ICON,
-    dataName: 'phone',
-    name: 'phoneCheckbox',
+    name: 'phone',
     text: "Phone",},
   { uri: icons.EMAIL_ICON,
-    dataName: 'email',
-    name: 'emailCheckbox',
+    name: 'email',
     text: "email",},
   { uri: icons.LINKEDIN_ICON,
-    dataName: 'linkedin',
-    name: 'linkedinCheckbox',
+    name: 'linkedin',
     text: "Linkedin",},
   { uri: icons.PINTEREST_ICON,
-    dataName: 'pinterest',
-    name: 'pinterestCheckbox',
+    name: 'pinterest',
     text: "Pinterest",},
   { uri: icons.TWITTER_ICON,
-    dataName: 'twitter',
-    name: 'twitterCheckbox',
+    name: 'twitter',
     text: "Twitter",},
   { uri: icons.FACEBOOK_ICON,
-    dataName: 'facebook',
-    name: 'facebookCheckbox',
+    name: 'facebook',
     text: "Facebook",},
   { uri: icons.GITHUB_ICON,
-    dataName: 'github',
-    name: 'githubCheckbox',
+    name: 'github',
     text: "github",},
   { uri: icons.INSTAGRAM_ICON,
-    dataName: 'instagram',
-    name: 'instagramCheckbox',
+    name: 'instagram',
     text: "Instagram",},
   { uri: icons.SNAPCHAT_ICON,
-    dataName: 'snapchat',
-    name: 'snapchatCheckbox',
+    name: 'snapchat',
     text: "Snapchat",},
  ];
 
-export default connect( undefined, mapDispatchToProps)(ShareSelector);
+export default connect( mapStateToProps, mapDispatchToProps)(ShareSelector);
