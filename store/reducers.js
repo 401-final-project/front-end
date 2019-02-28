@@ -59,7 +59,7 @@ let defaultUser = {
 };
 
 let initialState = {
-    userInfo: {},
+    userInfo: defaultUser,
     socialSelect: {
       name: true,
       phone: false,
@@ -72,13 +72,17 @@ let initialState = {
       instagram: false,
       snapchat: false,
     },
-    contacts: [
-
-    ],
-    recentScan: {},
-
+    contacts: [],
+    userId: Expo.Constants.installationId,
+    location: {
+      latitude: 0,
+      longitude: 0,
+      time: Date.now(),
+    },
 };
+
 export default (state = initialState, action) => {
+  console.log(`🐤`, state);
   let { type, payload } = action;
   switch (type) {
   case 'UPDATE_USER_INFO': {
@@ -109,15 +113,20 @@ export default (state = initialState, action) => {
     return newState;
   }
   case 'NEW_CONTACT_SCAN': {
-
     let newState = {
       ...state,
       contacts: [...state.contacts, payload],
     };
     return newState;
-    
   }
-
+  case 'UPDATE_LOCATION': {
+    let newState = {
+      ...state,
+      location: payload,
+    };
+    return newState;
+  }
+  
   case 'RETRIEVED_DATA': {
     return payload;
   }

@@ -20,6 +20,13 @@ export const newContactScan = (payload) => {
   };
 };
 
+export const updateLocation = (payload) => {
+  return {
+    type: 'UPDATE_LOCATION',
+    payload,
+  };
+};
+
 export const retrievedLocalStorage = (payload) => {
   return {
     type: 'RETRIEVED_DATA',

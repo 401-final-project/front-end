@@ -78,7 +78,6 @@ class ProfileForm extends React.Component {
 
   handleInfoSubmit = () => {
     this.props.updateUserInfo(this.state.formData);
-    
   }
 
   handleCancel = () => {
@@ -90,17 +89,17 @@ class ProfileForm extends React.Component {
     this.setState({formData});
   }
   
-  async componentDidMount() {
+  // async componentDidMount() {
 
-    const retrievedData = await AsyncStorage.getItem('user');
-    console.log("fetched data:", retrievedData);
-    if(retrievedData !== null) {
-      this.props.retrievedLocalStorage(retrievedData);
-    } 
-    // else {
-    //   console.log("no data found");
-    // }
-  }
+  //   const retrievedData = await AsyncStorage.getItem('user');
+  //   console.log("fetched data:", retrievedData);
+  //   if(retrievedData !== null) {
+  //     this.props.retrievedLocalStorage(retrievedData);
+  //   } 
+  //   // else {
+  //   //   console.log("no data found");
+  //   // }
+  // }
 
   render() {
     return (
