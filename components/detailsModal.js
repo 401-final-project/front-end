@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {Modal, Text, TouchableHighlight, View, Alert} from 'react-native';
-import { Linking } from 'react-native';
+import {Modal, Text, TouchableHighlight, Linking, View, Alert} from 'react-native';
+
+import Anchor from './anchor';
 
 class DetailModal extends Component {
   constructor(props){
@@ -40,6 +41,9 @@ class DetailModal extends Component {
               <Text style={styles.detailInfo}>{info.name ? `Name: ${info.name}` : null}</Text>
               <Text style={styles.detailInfo}>{info.phone ? `Phone: ${info.phone}` : null}</Text>
               <Text style={styles.detailInfo}>{info.email ? `Email: ${info.email}` : null}</Text>
+
+              <Anchor href="http://linkedin.com/in/fletcher-larue">fletcher's linked in</Anchor>
+
               <Text style={styles.detailInfo}>{info.linkedin ? `Linkedin: ${info.linkedin}` : null}</Text>
               <Text style={styles.detailInfo}>{info.linkedin ? `linkedin.com/${info.linkedin}` : null}</Text>
               <Text style={styles.detailInfo}>{info.pinterest ? `Pinterest: ${info.pinterest}` : null}</Text>
