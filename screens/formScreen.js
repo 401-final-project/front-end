@@ -74,7 +74,9 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 class ProfileForm extends React.Component {
-  state = {}
+  state = {
+    formData: this.props.userInfo
+  }
 
   handleInfoSubmit = () => {
     this.props.updateUserInfo(this.state.formData);
