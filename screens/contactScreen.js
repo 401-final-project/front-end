@@ -6,18 +6,15 @@ import { connect } from 'react-redux';
 import {Provider} from 'react-redux';
 import store from '../store';
 
-
-
-
 const mapStateToProps = state => {
   return ({
     state: state
   });
 };
 
-class UserContacts extends React.Component{
+class UserContacts extends React.Component {
   render(){
-    console.log(this.props.state.userInfo.name);
+    // console.log(this.props.state.userInfo.name);
     return (
       <Provider store={store}>
       <FlatList
@@ -27,7 +24,6 @@ class UserContacts extends React.Component{
       </Provider>
     )
   }
-
 }
 
 export default connect(mapStateToProps)(UserContacts);

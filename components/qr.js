@@ -12,16 +12,9 @@ const mapStateToProps = state => {
 
 class QR extends React.Component {
   render() {
-    // console.log(`🍕`, this.props);
-    // console.log(`🍕`, this.props.userInfo);
-    // console.log(`🍕`, JSON.stringify(this.props.userInfo));
     return (
       <View>
-        <QRCode value={JSON.stringify(this.props.userInfo)} />
-        {/* <Button
-          onPress={this.handleClick}
-          title="Change QR Code"
-        /> */}
+        <QRCode value={JSON.stringify(this.props.userInfo ? this.props.userInfo : null)} />
       </View>
     );
   }
