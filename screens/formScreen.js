@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View, StyleSheet, Button, ScrollView } from 'react-native';
+
 import { connect } from 'react-redux';
 
 import * as actions from '../store/actions';
@@ -73,6 +74,7 @@ class ProfileForm extends React.Component {
 
   handleInfoSubmit = () => {
     this.props.updateUserInfo(this.state.formData);
+    
   }
 
   handleCancel = () => {
