@@ -1,7 +1,6 @@
 
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, Button , TouchableOpacity} from 'react-native';
-// import { Switch } from 'react-native-switch'
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 
 import ShareButton from '../components/share-button.js';
@@ -41,12 +40,12 @@ class ShareSelector extends React.Component {
             let userHas = this.props.userInfo[category.name];
             if(userHas){
               return (
-                  <ShareButton
-                    key={index}
-                    iconSrc={{ uri: category.uri }}
-                    onPress={() => {this.handleSwitch(category.name)}}
-                    checked={this.props.socialSelect[category.name]}
-                  >{category.text}</ShareButton>
+                <ShareButton
+                  key={index}
+                  iconSrc={{ uri: category.uri }}
+                  onPress={() => {this.handleSwitch(category.name)}}
+                  checked={this.props.socialSelect[category.name]}
+                >{category.text}</ShareButton>
               );
             }
           })

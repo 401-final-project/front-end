@@ -1,6 +1,25 @@
 import * as React from 'react';
-import { StyleSheet, Text, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, Image, View } from 'react-native';
 import { Switch } from 'react-native-switch';
+
+const ShareButton = (props) => {
+  return (
+    <View>
+      <TouchableOpacity onPress={props.onPress}>
+          <Switch
+            value={props.checked}
+            onValueChange={props.onPress} />
+      </TouchableOpacity>
+      <TouchableOpacity activeOpacity={0.5} style={[styles.button, props.buttonStyle]} onPress={props.onPress}>
+        <Image style={styles.icon} source={props.iconSrc} />
+        <Text style={[styles.buttonText, props.textStyle]}>{props.children}</Text>
+      </TouchableOpacity>
+    </View>
+
+  );
+};
+
+export default ShareButton;
 
 const styles = StyleSheet.create({
   buttonText: {
@@ -23,16 +42,3 @@ const styles = StyleSheet.create({
     marginRight: 30,
   },
 });
-
-// const ShareButton = ({ buttonStyle, onPress, iconSrc, textStyle, children  }) => (
-const ShareButton = (props) => {
-  return (
-    <TouchableOpacity activeOpacity={0.5} style={[styles.button, props.buttonStyle]} >
-      <Switch value={props.checked} onPress={props.onPress}/>
-      <Image style={styles.icon} source={props.iconSrc} />
-      <Text style={[styles.buttonText, props.textStyle]}>{props.children}</Text>
-    </TouchableOpacity>
-  );
-};
-
-export default ShareButton;

@@ -9,7 +9,7 @@ let defaultUser = {
 };
 
 let initialState = {
-  userInfo: {},
+  userInfo: defaultUser,
   socialSelect: {
     name: true,
     phone: false,
