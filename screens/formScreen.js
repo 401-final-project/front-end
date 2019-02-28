@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
+import { Text, View, StyleSheet, Button, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 
 import * as actions from '../store/actions';
@@ -85,7 +85,7 @@ class ProfileForm extends React.Component {
   
   render() {
     return (
-      <View style={styles.form}>
+      <ScrollView style={styles.form}>
         <Text>Enter your info below:</Text>
         <Form 
           // ref={c => this._form = c} 
@@ -103,7 +103,7 @@ class ProfileForm extends React.Component {
           title="Cancel"
           onPress={this.handleCancel}
         />
-      </View>
+      </ScrollView>
     );
   }
 }

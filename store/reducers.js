@@ -1,3 +1,5 @@
+import util from 'react-native-util';
+
 let defaultUser = {  
   name: "Fletcher",
   phone: "3334446666",
@@ -75,7 +77,7 @@ export default (state = initialState, action) => {
     case 'NEW_CONTACT_SCAN':{
       let newState = {
         ...state,
-        recentScan: payload,
+        contacts: [...state.contacts, payload],
       };
       return newState;
     }
