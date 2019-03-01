@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet, Button, ScrollView, AsyncStorage } from 'react-native';
+import { Text, View, StyleSheet, Button, ScrollView, AsyncStorage, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import Placeholders from '../components/urlComments.js';
 
@@ -86,17 +86,22 @@ class ProfileForm extends React.Component {
             options={Placeholders}
             onChange={this.onChange}
           />
-          <Text
-            title="Save My Info"
+          <TouchableOpacity
             onPress={this.handleInfoSubmit}
-            style={styles.button}
-          > Save My Info
-          </Text>
+          >
+            <Text
+              title="Save My Info"
+              style={styles.button}
+            > 
+            Save My Info
+            </Text>
+          </TouchableOpacity>
           <Button
             title="Cancel"
             onPress={this.handleCancel}
             color={'#1496bb'}
           />
+          <Text style={styles.filler}/>
         </ScrollView>
       </View>
     );
@@ -129,6 +134,9 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     padding: 12,
     textAlign: 'center',
+  },
+  filler: {
+    paddingBottom: 30,
   }
 });
 
