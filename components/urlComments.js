@@ -23,8 +23,11 @@ const Placeholders = {
     },
     snapchat: {
       placeholder: 'username',
-    }
-  }
+    },
+    ravelry: {
+      placeholder: 'username',
+    },
+  },
 };
 
 export default Placeholders;

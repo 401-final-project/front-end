@@ -9,7 +9,7 @@ let defaultUser = {
 };
 
 let initialState = {
-  userInfo: defaultUser,
+  userInfo: {},
   socialSelect: {
     name: true,
     phone: false,
@@ -25,35 +25,34 @@ let initialState = {
   },
   contacts: [
     {
-      'name':'Fletcher1',
-      'phone':'3334446666',
-      'email':'email@gmail.com',
+      'name':'Fletcher Larue',
+      'email':'laruefletcher@gmail.com',
       'linkedin':'fletcher-larue',
-      'pinterest':'asdFletch',
+      'github':'asdFletcher',
     },
     {
-      'name':'Fletcher2',
-      'phone':'3334446666',
-      'email':'email@gmail.com',
-      'linkedin':'fletcher-larue',
-      'pinterest':'pinteresting',
-      'twitter':'exampletiktoker',
-      'facebook':'booker',
-      'github':'gitter',
-      'instagram':'grammer',
-      'snapchat':'snapper',
+      'name':'Jared Pattison',
+      'email':'jaredpattison@gmail.com',
+      'linkedin':'jaredpattison',
+      'github':'jaredpattison',
     },
     {
-      'name':'Fletcher3',
-      'phone':'3334446666',
-      'email':'email@gmail.com',
-      'linkedin':'fletcher-larue',
-      'pinterest':'pinteresting',
-      'twitter':'exampletiktoker',
-      'facebook':'booker',
-      'github':'gitter',
-      'instagram':'grammer',
-      'snapchat':'snapper',
+      'name':'Michael George',
+      'email':'mgeorge9492@gmail.com',
+      'linkedin':'mageorge9492',
+      'github':'michaelageorge',
+    },
+    {
+      'name':'Ryan Gallaway',
+      'email':'rkgallaway@msn.com',
+      'linkedin':'ryangallaway',
+      'github':'rkgallaway',
+    },
+    {
+      'name':'Siobhan Niess',
+      'email':'rkgallaway@gmail.com',
+      'linkedin':'siobhan-niess',
+      'github':'niesssiobhan',
     },
   ],
   recentScan: {},
@@ -104,22 +103,3 @@ export default (state = initialState, action) => {
     return state;
   }
 };
-
-// async function _storeData(state) {
-//   try {
-//     await AsyncStorage.setItem('user', JSON.stringify(state));
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
-
-// async function _retrieveData()  {
-//   try {
-//     const value = await AsyncStorage.getItem('user');
-//     if (value !== null) {
-//       console.log(value);
-//     }
-//   } catch(error) {
-//     console.error(error);
-//   }
-// }

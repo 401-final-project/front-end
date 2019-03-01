@@ -88,6 +88,13 @@ class DetailModal extends Component {
                     Snapchat
                   </Anchor>
                 </View> : null}
+              {info.ravelry ? 
+              <View style={styles.iconRow}>
+                <Anchor style={styles.detailInfo} href={`http://ravelry.com/people/${info.ravelry}`}>
+                  <Image style={styles.icon} source={{uri: icons.RAVELRY_ICON}} />
+                  Ravelry
+                </Anchor>
+              </View> : null} 
               <TouchableHighlight
                 onPress={() => {
                   this.setModalVisible(!this.state.modalVisible);
@@ -101,6 +108,7 @@ class DetailModal extends Component {
     );
   }
 }
+
 
 const styles = {
   container: {
