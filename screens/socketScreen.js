@@ -38,11 +38,11 @@ class Socket extends React.Component {
     const subscriber = new Subscriber('users');
 
     const contactIds = this.friendIds()
-    // console.log({contactIds})
+    console.log({contactIds})
 
     contactIds.forEach(contactId => {
       subscriber.subscribe(contactId, (payload) => {
-        // console.log('received new data for user 🍆🍆🍆🍆🍆🍆🍆', contactId, payload);
+        console.log('received new data for user 🍆🍆🍆🍆🍆🍆🍆', contactId, payload);
         this.updateContactLocation(payload);
       })
     })

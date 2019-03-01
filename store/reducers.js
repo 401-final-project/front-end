@@ -41,8 +41,26 @@ let defaultContacts = [
     'snapchat':'snapper',
   },
   {
-    'name': 'Fletcher Android S6, lol',
+    'name': 'Fletchers Phone',
     'userId': '7de54850-b9f5-471e-9375-fd8c718c6d04',
+    location: {
+      latitude: 1.1,
+      longitude: 2.3,
+      time: 0,
+    },
+  },
+  {
+    'name': 'Jakes phone',
+    'userId': '20afc315-3a54-4c77-8ff8-09623669d2dd',
+    location: {
+      latitude: 1.1,
+      longitude: 2.3,
+      time: 0,
+    },
+  },
+  {
+    'name': 'Michaels phone',
+    'userId': '9A91C9D6-DF2F-475E-9EAD-216510E799CC',
     location: {
       latitude: 1.1,
       longitude: 2.3,
@@ -50,6 +68,7 @@ let defaultContacts = [
     },
   }
 ];
+
 
 let initialState = {
   userInfo: {},
@@ -66,7 +85,7 @@ let initialState = {
     snapchat: false,
     ravelry: false,
   },
-  contacts: [],
+  contacts: defaultContacts,
   recentScan: {},
   userId: Expo.Constants.installationId,
   location: {
