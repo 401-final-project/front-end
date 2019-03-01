@@ -66,6 +66,10 @@ BuzzCard is a mobile application made to help people make personal and/or profes
 
 #### Running the app
 * First thing that you will have to do is to download 
+* Then you are going to want to fork the repo 
+  * start the application by running the command `npm start` in your terminal
+* Once the new window has appeared, scan the QR code that has been generated with your scanner from the application 
+  * Now you are ready to use BuzzCard and make your connections!
   
 #### Tests Made
 * 
