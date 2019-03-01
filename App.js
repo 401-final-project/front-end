@@ -1,10 +1,5 @@
 import React from 'react';
 import { Platform, StatusBar, StyleSheet, Text, View, ScrollView } from 'react-native';
-// import ProfileForm from './screens/profileForm';
-// import QR from './components/qr';
-// import Storage from './components/storage.js';
-// import Scanner from './screens/scanner'
-// import ShareSelector from './components/share-selector.js';
 import store from './store';
 import {Provider} from 'react-redux';
 import { AppLoading, Asset, Font, Icon } from 'expo';
@@ -70,35 +65,3 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 });
-
-// class App extends React.Component {
-//   render() {
-//     return (
-//       <Provider store={store}>
-//         <ScrollView>
-//           <Text>This is going to be our app!</Text>
-//           <Text>-----</Text>
-//           <Text>-----</Text>
-
-//           <Text>ProfileForm:</Text>
-//           <Storage />
-//           {/* <ProfileForm /> */}
-//           {/* <QR /> */}
-//           {/* <ShareSelector /> */}
-//           {/* <Scanner /> */}
-//          </ScrollView>
-//       </Provider>
-//     );
-//   }
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
-
-// export default App; 
