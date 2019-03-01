@@ -113,22 +113,24 @@ class ProfileForm extends React.Component {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.form} showsVerticalScrollIndicator={false}>
-          <Text>Enter your info below:</Text>
+          <Text style={styles.header}>Enter your info below:</Text>
           <Form 
-            // ref={c => this._form = c} 
-            ref="form"
+            ref={c => this._form = c} 
             type={User}
             value={this.state.formData}
             options={Placeholders}
             onChange={this.onChange}
           />
-          <Button 
+          <Text
             title="Save My Info"
             onPress={this.handleInfoSubmit}
-          />
-          <Button 
+            style={styles.button}
+          > Save My Info
+          </Text>
+          <Button
             title="Cancel"
             onPress={this.handleCancel}
+            color={'#1496bb'}
           />
         </ScrollView>
       </View>
@@ -137,16 +139,31 @@ class ProfileForm extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  form: {
-    margin: 24,
-  },
   container: {
     justifyContent: 'center',
-    marginTop: 5,
-    marginLeft: 25,
-    marginRight: 25,
-    padding: 25,
-    backgroundColor: '#ffffff'
+    backgroundColor: '#f2f3f4' //lilla grey
+  },
+  header: {
+    color: '#107896',
+    fontWeight: 'bold',
+    fontSize: 24,
+    textAlign: 'center',
+    paddingBottom: 12,
+  },
+  form: {
+    padding: 24,
+  },
+  button: {
+    backgroundColor: '#107896', //darkest alice blue
+    borderColor: '#c1c7c9', //heather grey 
+    borderWidth: 2,
+    borderRadius: 12,
+    color: '#f2f3f4', //lilla grey
+    fontSize: 24,
+    fontWeight: 'bold',
+    overflow: 'hidden',
+    padding: 12,
+    textAlign: 'center',
   }
 });
 
