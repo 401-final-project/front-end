@@ -2,10 +2,6 @@ import React from 'react';
 import { Linking, Text } from 'react-native';
 
 class Anchor extends React.Component {
-  constructor(props) {
-    super(props) 
-
-  }
   _handlePress = () => {
     Linking.openURL(this.props.href);
     this.props.onPress && this.props.onPress();
