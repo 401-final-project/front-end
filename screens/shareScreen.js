@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop: 50,
+    backgroundColor: '#f2f3f4'
   },
   qrScanner: {
     width: 300,
