@@ -20,7 +20,7 @@ class ContactList extends React.Component{
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <View style={styles.list}>
           {
             this.props.contacts && this.props.contacts.map( (contact,i) =>
@@ -32,13 +32,16 @@ class ContactList extends React.Component{
             )
           }
         </View>
-
       </View>
     )
   }
 }
 
 const styles = {
+  container: {
+    height: 50,
+    width: 500
+  },
   list: {
     margin: 30,
   },
