@@ -20,6 +20,7 @@ const User = t.struct({
   github: t.String,
   instagram: t.String,
   snapchat: t.String,
+  ravelry: t.String,
 });
 
 const Placeholders = {
@@ -51,6 +52,10 @@ const Placeholders = {
     snapchat: {
       placeholder: 'username',
       help: 'snapchat.com/add/username' 
+    },
+    ravelry: {
+      placeholder: 'username',
+      help: 'ravelry.com/people/username' 
     }
   }
 };

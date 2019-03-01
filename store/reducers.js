@@ -21,6 +21,7 @@ let initialState = {
     github: false,
     instagram: false,
     snapchat: false,
+    ravelry: false,
   },
   contacts: [
     {
