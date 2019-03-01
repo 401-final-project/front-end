@@ -68,13 +68,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#f2f3f4',
+    backgroundColor: '#ecf0f1',
   },
   barCodeScanner: {
-    width: 400,
-    height: 600,
-    justifyContent: 'center',
-    alignItems: 'center'
+    width: 300,
+    height: 300,
   }
 });
 
