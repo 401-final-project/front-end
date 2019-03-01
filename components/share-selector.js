@@ -83,6 +83,9 @@ const BUTTONS = [
   { uri: icons.SNAPCHAT_ICON,
     name: 'snapchat',
     text: "Snapchat",},
+  { uri: icons.RAVELRY_ICON,
+    name: 'ravelry',
+    text: "ravelry",},
  ];
 
 export default connect( mapStateToProps, mapDispatchToProps)(ShareSelector);
