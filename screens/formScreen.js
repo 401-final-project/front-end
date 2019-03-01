@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, StyleSheet, Button, ScrollView, AsyncStorage } from 'react-native';
 import { connect } from 'react-redux';
+import Placeholders from '../components/urlComments.js';
 
 import * as actions from '../store/actions';
 
@@ -23,42 +24,6 @@ const User = t.struct({
   ravelry: t.String,
 });
 
-const Placeholders = {
-  fields: {
-    linkedin: {
-      placeholder: 'username',
-      help: 'linkedin/in/username'
-    },
-    pinterest: {
-      placeholder: 'username',
-      help: 'pinterest.com/username'
-    },
-    twitter: {
-      placeholder: 'username',
-      help: 'twitter.com/username'
-    },
-    facebook: {
-      placeholder: 'username',
-      help: 'facebook.com/username'
-    },
-    github: {
-      placeholder: 'username',
-      help: 'github.com/username'
-    },
-    instagram: {
-      placeholder: 'username',
-      help: 'instagram.com/username'
-    },
-    snapchat: {
-      placeholder: 'username',
-      help: 'snapchat.com/add/username' 
-    },
-    ravelry: {
-      placeholder: 'username',
-      help: 'ravelry.com/people/username' 
-    }
-  }
-};
 
 const mapStateToProps = state => {
   return ({
