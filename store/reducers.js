@@ -103,22 +103,3 @@ export default (state = initialState, action) => {
     return state;
   }
 };
-
-// async function _storeData(state) {
-//   try {
-//     await AsyncStorage.setItem('user', JSON.stringify(state));
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
-
-// async function _retrieveData()  {
-//   try {
-//     const value = await AsyncStorage.getItem('user');
-//     if (value !== null) {
-//       console.log(value);
-//     }
-//   } catch(error) {
-//     console.error(error);
-//   }
-// }
