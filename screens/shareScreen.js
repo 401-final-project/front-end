@@ -28,6 +28,9 @@ const styles = StyleSheet.create({
   qrScanner: {
     width: 300,
     height: 300,
+  },
+  selectors: {
+    backgroundColor: '#f2f3f4'
   }
 });
 

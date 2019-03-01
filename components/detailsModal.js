@@ -41,7 +41,7 @@ class DetailModal extends Component {
               <Text style={styles.detailInfo}>{info.email ? `Email: ${info.email}` : null}</Text>
               {info.linkedin ? 
                 <View style={styles.iconRow}>
-                  <Anchor style={styles.detailInfo} href={`http://linked.com/in/${info.linkedin}`}>
+                  <Anchor style={styles.detailInfo} href={`http://linkedin.com/in/${info.linkedin}`}>
                     <Image style={styles.icon} source={{uri: icons.LINKEDIN_ICON}} />
                     Linkedin
                   </Anchor>
