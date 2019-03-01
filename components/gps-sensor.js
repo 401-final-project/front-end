@@ -7,9 +7,8 @@ import { connect } from 'react-redux';
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    updateLocation: (payload) => {
-      return dispatch(actions.updateLocation(payload));
-    },
+    updateUserData: (state) => dispatch(actions.updateRemoteUserInfo(state)),
+    updateLocation: (payload) => dispatch(actions.updateLocation(payload)),
   });
 }
 
@@ -26,6 +25,7 @@ class GPSSensor extends React.Component {
   };
 
   componentDidMount = () => {
+    // console.log('moooounting')
     if (Platform.OS === 'android' && !Constants.isDevice) {
       this.setState({
         errorMessage: 'Oops, this will not work on Sketch in an Android emulator. Try it on your device!',
@@ -54,7 +54,7 @@ class GPSSensor extends React.Component {
     setInterval( async () => {
       let location = await Location.getCurrentPositionAsync({});
       this._handlePositionData( location );
-    }, 750);
+    }, 7500);
   }
 
   _handlePositionData(location){
@@ -66,32 +66,18 @@ class GPSSensor extends React.Component {
       time: Date.now(),
     }
 
-    console.log(`newLocation: `, newLocation);
+    // console.log(`newLocation: `, newLocation);
 
-    this.props.saveLoc(newLocation);
+    const newState = {
+      ...this.props.state,
+      location: newLocation,
+    };
+
+    this.props.updateUserData(newState)
+    this.props.updateLocation(newLocation);
   }
-// location:  Object {
-//   "coords": Object {
-//     "accuracy": 17.198999404907227,
-//     "altitude": 108.19999694824219,
-//     "heading": 0,
-//     "latitude": 47.6318776,
-//     "longitude": -122.3564953,
-//     "speed": 0,
-//   },
-//   "mocked": false,
-//   "timestamp": 1551362931795,
-// }
-  render() {
-    // let { timestamp } = this.props.lastLocation;
-    // let { heading, speed, longitude, latitude } = this.props.lastLocation.coords;
-    // let text = 'Waiting on location..';
-    // if (this.state.errorMessage) {
-    //   text = this.state.errorMessage;
-    // } else if (this.props.lastLocation) {
-    //   text = JSON.stringify(this.props.lastLocation);
-    // }
 
+  render() {
     return null;
   }
 }

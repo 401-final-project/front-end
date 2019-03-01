@@ -27,15 +27,17 @@ const User = t.struct({
 
 const mapStateToProps = state => {
   return ({
-    userInfo: state.userInfo
+    userInfo: state.userInfo,
+    state: state,
   });
 };
 
 const mapDispatchToProps = (dispatch) => {
   // console.log(actions);
   return ({
-    updateUserInfo: (payload) => {
-      return dispatch(actions.updateUserInfo(payload))
+    updateUserInfo: (payload, state) => {
+      dispatch(actions.updateRemoteUserInfo(state))
+      dispatch(actions.updateLocalUserInfo(payload))
     },
     // retrievedLocalStorage: (payload) => {
     //   return dispatch(actions.retrievedLocalStorage(payload))
@@ -49,7 +51,7 @@ class ProfileForm extends React.Component {
   }
 
   handleInfoSubmit = () => {
-    this.props.updateUserInfo(this.state.formData);
+    this.props.updateUserInfo(this.state.formData, this.props.state);
   }
 
   handleCancel = () => {

@@ -55,7 +55,7 @@ class Storage extends React.Component {
     try {
       const value = await AsyncStorage.getItem('contact01');
       if (value !== null) {
-        console.log(value);
+        // console.log(value);
       }
     } catch(error) {
       console.error(error);

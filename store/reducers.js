@@ -8,8 +8,51 @@ let defaultUser = {
   pinterest: 'interesting',
 };
 
+let defaultContacts = [
+  {
+    'name':'Fletcher1',
+    'phone':'3334446666',
+    'email':'email@gmail.com',
+    'linkedin':'fletcher-larue',
+    'pinterest':'asdFletch',
+  },
+  {
+    'name':'Fletcher2',
+    'phone':'3334446666',
+    'email':'email@gmail.com',
+    'linkedin':'fletcher-larue',
+    'pinterest':'pinteresting',
+    'twitter':'exampletiktoker',
+    'facebook':'booker',
+    'github':'gitter',
+    'instagram':'grammer',
+    'snapchat':'snapper',
+  },
+  {
+    'name':'Fletcher3',
+    'phone':'3334446666',
+    'email':'email@gmail.com',
+    'linkedin':'fletcher-larue',
+    'pinterest':'pinteresting',
+    'twitter':'exampletiktoker',
+    'facebook':'booker',
+    'github':'gitter',
+    'instagram':'grammer',
+    'snapchat':'snapper',
+  },
+  {
+    'name': 'Fletcher Android S6, lol',
+    'userId': '7de54850-b9f5-471e-9375-fd8c718c6d04',
+    location: {
+      latitude: 1.1,
+      longitude: 2.3,
+      time: 0,
+    },
+  }
+];
+
 let initialState = {
-  userInfo: defaultUser,
+  userInfo: {},
   socialSelect: {
     name: true,
     phone: false,
@@ -23,39 +66,7 @@ let initialState = {
     snapchat: false,
     ravelry: false,
   },
-  contacts: [
-    {
-      'name':'Fletcher1',
-      'phone':'3334446666',
-      'email':'email@gmail.com',
-      'linkedin':'fletcher-larue',
-      'pinterest':'asdFletch',
-    },
-    {
-      'name':'Fletcher2',
-      'phone':'3334446666',
-      'email':'email@gmail.com',
-      'linkedin':'fletcher-larue',
-      'pinterest':'pinteresting',
-      'twitter':'exampletiktoker',
-      'facebook':'booker',
-      'github':'gitter',
-      'instagram':'grammer',
-      'snapchat':'snapper',
-    },
-    {
-      'name':'Fletcher3',
-      'phone':'3334446666',
-      'email':'email@gmail.com',
-      'linkedin':'fletcher-larue',
-      'pinterest':'pinteresting',
-      'twitter':'exampletiktoker',
-      'facebook':'booker',
-      'github':'gitter',
-      'instagram':'grammer',
-      'snapchat':'snapper',
-    },
-  ],
+  contacts: [],
   recentScan: {},
   userId: Expo.Constants.installationId,
   location: {
@@ -66,7 +77,6 @@ let initialState = {
 };
 
 export default (state = initialState, action) => {
-  console.log(`🐤`, state);
   let { type, payload } = action;
   switch (type) {
  
@@ -111,6 +121,34 @@ export default (state = initialState, action) => {
   
   case 'RETRIEVED_DATA': {
     return payload;
+  }
+
+  case 'UPDATE_SINGLE_CONTACT_LOCATION': {
+
+    let contactToUpdateIndex;
+    
+    for(let i = 0; i < state.contacts.length; i++){
+      if(state.contacts[i].userId === payload.userId){
+        contactToUpdateIndex = i;
+      }
+    }
+
+    if(!contactToUpdateIndex){ return state; }
+
+    const newContact = {
+      ...state.contacts[contactToUpdateIndex],
+      location: payload.location,
+    };
+
+    const newContacts = [...state.contacts];
+    newContacts[contactToUpdateIndex] = newContact;
+
+    const newState = {
+      ...state,
+      contacts: newContacts
+    }
+
+    return newState;
   }
 
   default:

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, View } from 'react-native';
+import { Platform, View, ScrollView } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
@@ -7,6 +7,7 @@ import ShareScreen from '../screens/shareScreen';
 import ScanScreen from '../screens/scanScreen';
 import FormScreen from '../screens/formScreen';
 import ContactsScreen from '../screens/contactScreen';
+import SocketScreen from '../screens/socketScreen';
 
 const HomeStack = createStackNavigator({
   Home: ShareScreen,
@@ -69,7 +70,22 @@ ContactsStack.navigationOptions = {
   ),
 };
 
+const SocketStack = createStackNavigator({
+  Forms: SocketScreen, 
+});
+
+SocketStack.navigationOptions = {
+  tabBarLabel: 'Sockets',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+    />
+  ),
+};
+
 export default createBottomTabNavigator({
+  SocketStack,
   HomeStack,
   ScanStack,
   FormStack,

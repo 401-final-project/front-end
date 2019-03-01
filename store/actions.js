@@ -1,11 +1,23 @@
 import util from 'react-native-util';
 
-export const updateUserInfo = (payload) => {
+import { endpoint , updateUser } from '../components/getter.js';
+
+// ~~~~~~~~~~ update user info ~~~~~~~~~~~~~~~~~~
+export const updateLocalUserInfo = (payload) => {
   return {
     type: 'UPDATE_USER_INFO',
     payload,
   };
 };
+export const updateRemoteUserInfo = (state) => {
+  updateUser(state);
+  return {
+    type: 'nothing',
+    state,
+  };
+};
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 export const updateShareSelector = (payload) => {
   return {
@@ -20,12 +32,16 @@ export const newContactScan = (payload) => {
   };
 };
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export const updateLocation = (payload) => {
+  // console.log('UPDATE LOCATION ACTION CALLED')
+
   return {
     type: 'UPDATE_LOCATION',
     payload,
   };
 };
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 export const retrievedLocalStorage = (payload) => {
   return {
@@ -33,4 +49,11 @@ export const retrievedLocalStorage = (payload) => {
     payload,
   };
 };
+
+export const updateMyContacts = (payload) => {
+  return {
+    type: 'UPDATE_SINGLE_CONTACT_LOCATION',
+    payload,
+  };
+}
 

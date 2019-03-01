@@ -98,10 +98,10 @@ const compareTwoPeople = (personA, personB) => {
   return true;
 }
 
-console.log(userAlreadyExists(newUser, contacts))
-console.log(userAlreadyExists(duplicate, contacts))
-console.log(userAlreadyExists(anotherNewUser, contacts))
-console.log(userAlreadyExists(thirdNewUser, contacts))
+// console.log(userAlreadyExists(newUser, contacts))
+// console.log(userAlreadyExists(duplicate, contacts))
+// console.log(userAlreadyExists(anotherNewUser, contacts))
+// console.log(userAlreadyExists(thirdNewUser, contacts))
 
 
 
