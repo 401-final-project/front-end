@@ -94,7 +94,7 @@ class DetailModal extends Component {
                   <Image style={styles.icon} source={{uri: icons.RAVELRY_ICON}} />
                   Ravelry
                 </Anchor>
-              </View> : null}
+              </View> : null} 
               <TouchableHighlight
                 onPress={() => {
                   this.setModalVisible(!this.state.modalVisible);
@@ -108,6 +108,7 @@ class DetailModal extends Component {
     );
   }
 }
+
 
 const styles = {
   container: {

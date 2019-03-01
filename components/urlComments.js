@@ -26,8 +26,8 @@ const Placeholders = {
     },
     ravelry: {
       placeholder: 'username',
-    }
-  }
+    },
+  },
 };
 
 export default Placeholders;
