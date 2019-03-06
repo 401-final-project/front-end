@@ -37,6 +37,8 @@ class DetailModal extends Component {
           <View style={{marginTop: 22}}>
             <View>
               <Text style={styles.detailInfo}>{info.name ? `Name: ${info.name}` : null}</Text>
+              <Text style={styles.detailInfo}>{info.company ? `Company: ${info.company}` : null}</Text>
+              <Text style={styles.detailInfo}>{info.jobTitle ? `Job Title: ${info.jobTitle}` : null}</Text>
               <Text style={styles.detailInfo}>{info.phone ? `Phone: ${info.phone}` : null}</Text>
               <Text style={styles.detailInfo}>{info.email ? `Email: ${info.email}` : null}</Text>
               {info.linkedin ? 
