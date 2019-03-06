@@ -6,6 +6,7 @@
 BuzzCard is a mobile application made to help people make personal and/or professional connections everyday. An application that anyone can use to help meet new people and exchange information and stay connected with one another. BuzzCard helps you not only get connected and build your network but to also help you reconnect and follow up with them on a later date. Share your social media accounts, email, and other forms of contact.
 
 ### Download & Installation
+* [Find BUZZCARD in the Google Play store:](https://play.google.com/store/apps/details?id=com.jaredpattison.BUZZCARD)
 
 ### Features
 * Create a profile to save your contact information ranging from your email and phone number to your social media accounts
