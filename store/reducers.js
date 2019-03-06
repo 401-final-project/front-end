@@ -12,6 +12,8 @@ let initialState = {
   userInfo: {},
   socialSelect: {
     name: true,
+    company: false,
+    jobTitle: false,
     phone: false,
     email: false,
     linkedin: false,
