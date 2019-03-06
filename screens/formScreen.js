@@ -12,6 +12,8 @@ const Form = t.form.Form;
 
 const User = t.struct({
   name: t.String,
+  company: t.String,
+  jobTitle: t.String,
   phone: t.Number,
   email: t.String,
   linkedin: t.String, 
